@@ -126,80 +126,76 @@ v
 
 
 ### Query Document
-
 POST /query
 
-
-
 Request body:
-  ```json
-  {
-    "question": "What is the main topic of the document?",
-    "top_k": 5
-  }
-  
-  Response:
-  
-  {
-    "answer": "Generated answer based on document content",
-    "sources": ["example.pdf"]
-  }
-  Health Check
-  GET /health
-  Setup Instructions
-  1. Install Dependencies
-  pip install fastapi uvicorn pydantic sentence-transformers faiss-cpu python-multipart PyPDF2 numpy
-  2. Run the Application
-  python rag_api.py
-  3. Open the Application
-  http://127.0.0.1:8000/
-  Design Choices
-  
-  FAISS was chosen for its speed and simplicity in local vector search
-  
-  BackgroundTasks allow non-blocking ingestion
-  
-  No heavy RAG frameworks were used to keep the system transparent
-  
-  Chunking and retrieval logic are explicitly implemented
-  
-  Known Limitations
-  
-  Similarity-based retrieval may miss answers spread across multiple distant chunks
-  
-  In-memory rate limiting is not persistent
-  
-  Retrieval quality depends on embedding performance
-  
-  Future Enhancements
-  
-  Add cross-chunk re-ranking
-  
-  Integrate a full LLM-based generation step
-  
-  Cache embeddings for faster queries
-  
-  Add confidence scores and citations per answer
-  
-  Author Notes
-  
-  This project was built to demonstrate practical understanding of RAG systems, vector search, and API-based AI system design, with emphasis on explainability and clean architecture.
-  
-  
-  
-  ---
-  
-  
-  ### ✅ This README:
-  - Meets **all task requirements**
-  - Looks **professional on GitHub**
-  - Is **easy for evaluators to follow**
-  - Clearly explains architecture, flow, and design choices
-  
-  
-  If you want next, I can:
-  - Review your **GitHub repo like an evaluator**
-  - Convert the diagram into **draw.io format**
-  - Write a **submission cover note**
-  - Prepare **viva / interview questions & answers**
-  ::contentReference[oaicite:0]{index=0}
+```json
+{
+  "question": "What is the main topic of the document?",
+  "top_k": 5
+}
+Response:
+{
+  "answer": "Generated answer based on document content",
+  "sources": ["example.pdf"]
+}
+Health Check
+GET /health
+
+Setup Instructions
+1. Install Dependencies
+pip install fastapi uvicorn pydantic sentence-transformers faiss-cpu python-multipart PyPDF2 numpy
+2. Run the Application
+python rag_api.py
+3. Open the Application
+http://127.0.0.1:8000/
+Design Choices
+
+FAISS was chosen for its speed and simplicity in local vector search
+
+BackgroundTasks allow non-blocking ingestion
+
+No heavy RAG frameworks were used to keep the system transparent
+
+Chunking and retrieval logic are explicitly implemented
+
+Known Limitations
+
+Similarity-based retrieval may miss answers spread across multiple distant chunks
+
+In-memory rate limiting is not persistent
+
+Retrieval quality depends on embedding performance
+
+Future Enhancements
+
+Add cross-chunk re-ranking
+
+Integrate a full LLM-based generation step
+
+Cache embeddings for faster queries
+
+Add confidence scores and citations per answer
+
+Author Notes
+
+This project was built to demonstrate practical understanding of RAG systems, vector search, and API-based AI system design, with emphasis on explainability and clean architecture.
+
+
+
+---
+
+
+### ✅ This README:
+- Meets **all task requirements**
+- Looks **professional on GitHub**
+- Is **easy for evaluators to follow**
+- Clearly explains architecture, flow, and design choices
+
+
+If you want next, I can:
+- Review your **GitHub repo like an evaluator**
+- Convert the diagram into **draw.io format**
+- Write a **submission cover note**
+- Prepare **viva / interview questions & answers**
+::contentReference[oaicite:0]{index=0}
