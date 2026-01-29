@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RAG Question Answering</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📄 RAG-Based Question Answering</h1>
+    <p class="subtitle">Upload a document and ask questions</p>
+
+    <div class="card">
+      <h2>Upload Document</h2>
+      <input type="file" id="fileInput" />
+      <button onclick="uploadFile()">Upload</button>
+      <p id="uploadStatus"></p>
+    </div>
+
+    <div class="card">
+      <h2>Ask a Question</h2>
+      <textarea id="question" placeholder="Enter your question..."></textarea>
+      <button onclick="askQuestion()">Ask</button>
+    </div>
+
+    <div class="card answer">
+      <h2>Answer</h2>
+      <pre id="answerBox">Waiting for question...</pre>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
